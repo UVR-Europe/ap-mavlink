@@ -1798,6 +1798,19 @@
       <field type="uint16_t" name="MCU_voltage_min" units="mV">MCU voltage minimum</field>
       <field type="uint16_t" name="MCU_voltage_max" units="mV">MCU voltage maximum</field>
     </message>
+    <message id="15006" name="UVR_PID_GOV">
+       <description>UVR_PID_GOV</description>
+       <field type="float" name="target">Governor Pid Target</field>
+       <field type="float" name="actual">Governor Pid Actual value</field>
+       <field type="float" name="error">Governor Pid Error</field>
+       <field type="float" name="P">Governor Pid P Out</field>
+       <field type="float" name="I">Governor Pid I Out</field>
+       <field type="float" name="D">Governor Pid D Out</field>
+       <field type="float" name="FF">Governor Pid Fast Forward</field>
+       <field type="float" name="out">Governor Pid Output</field>
+       <field type="float" name="raw_error">Governor Pid Error without filtering</field>
+       <field type="int8_t" name="governor_active">Governor Activity sign</field>
+    </message>
     <message id="16000" name="UVR_GENERIC_DATA">
       <description>Use it to send any arbitrary named data (utility) without creating more message definitions.</description>
       <field type="char[4]" name="id">id of data</field>

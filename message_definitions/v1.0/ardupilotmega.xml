@@ -1868,6 +1868,24 @@
        <field type="float" name="raw_error">Governor Pid Error without filtering</field>
        <field type="int8_t" name="governor_active">Governor Activity sign</field>
     </message>
+    <message id="15007" name="UH_BEYOND_M_SENSORS">
+       <description>Sensors of Beyond_M</description>
+       <field type="float" name="temperature_EG1">Exhaust gas temperature 1</field>
+       <field type="float" name="temperature_EG2">Exhaust gas temperature 2</field>
+       <field type="float" name="temperature_EG3">Exhaust gas temperature 3</field>
+       <field type="float" name="temperature_EG4">Exhaust gas temperature 4</field>
+       <field type="float" name="temperature_CHT1">Cylinder head temperature 1</field>
+       <field type="float" name="temperature_CHT2">Cylinder head temperature 2</field>
+       <field type="float" name="temperature_oil">Oil temperature</field>
+       <field type="float" name="temperature_coolant">Coolant temperature</field>
+       <field type="float" name="temperature_gearbox">Gearbox temperature</field>
+       <field type="float" name="pressure_fuel">Fuel pressure</field>
+       <field type="float" name="pressure_oil">Oil pressure</field>
+       <field type="float" name="pressure_manifold">Manifold pressure</field>
+       <field type="float" name="level_fuel">Fuel level</field>
+       <field type="float" name="battery_12v">Battery voltage (12V)</field>
+       <field type="uint16_t" name="status_bits">Equipment status bits. b0=fuel pressure</field>
+    </message>
     <message id="16000" name="UVR_GENERIC_DATA">
       <description>Use it to send any arbitrary named data (utility) without creating more message definitions.</description>
       <field type="char[4]" name="id">id of data</field>

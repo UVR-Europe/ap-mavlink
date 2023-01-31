@@ -367,6 +367,20 @@
         <param index="1" label="RC_GCS index" minValue="1" maxValue="2" increment="1">Function index</param>
         <param index="2" label="PWM value" minValue="0" maxValue="1000" increment="1">PWM value in case of gcs source (see RC_GCSx_PWM_SRC)</param>
       </entry>
+      <entry value="45009" name="MAV_CMD_UH_REG_PILOT" hasLocation="false" isDestination="false">
+        <description>Registers pilot</description>
+        <param index="1" label="Pilot index" minValue="0" maxValue="4" increment="1">Pilot Index</param>
+        <param index="2" label="Number part0">Number bytes 0-3</param>
+        <param index="3" label="Number part1">Number bytes 4-7</param>
+        <param index="4" label="Number part2">Number bytes 8-11</param>
+        <param index="5" label="Number part3">Number bytes 12-15</param>
+        <param index="6" label="Number part4">Number's byte 16 followed by 3 bytes of secret digits</param>
+      </entry>
+      <entry value="45010" name="MAV_CMD_UH_AUTH_PILOT" hasLocation="false" isDestination="false">
+        <description>Authenticates pilot</description>
+        <param index="1" label="Pilot index" minValue="0" maxValue="4" increment="1">Pilot Index</param>
+        <param index="2" label="Secret">3 bytes of secret digits</param>
+      </entry>
 <!--UVR end-->
     </enum>
     <enum name="SCRIPTING_CMD">
@@ -1885,6 +1899,12 @@
        <field type="float" name="level_fuel">Fuel level</field>
        <field type="float" name="battery_12v">Battery voltage (12V)</field>
        <field type="uint16_t" name="status_bits">Equipment status bits. b0=fuel pressure</field>
+    </message>
+    <message id="15008" name="UH_REGISTERED_PILOTS">
+      <description>Returns registered pilots data.</description>
+      <field type="char[16]" name="regNum">registration number</field>
+      <field type="char[3]" name="secretCode">secret code</field>
+      <field type="uint8_t" name="reserved">reserved</field>
     </message>
     <message id="16000" name="UVR_GENERIC_DATA">
       <description>Use it to send any arbitrary named data (utility) without creating more message definitions.</description>
